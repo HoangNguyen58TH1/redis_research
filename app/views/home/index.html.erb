@@ -1,0 +1,13 @@
+<h1>Redis Caching Example</h1>
+
+<div class="cache-example">
+  <h2>Using Rails.cache</h2>
+  <p>Value: <%= @cached_value %></p>
+  <p>This value will be cached for 1 hour using Rails.cache</p>
+</div>
+
+<div class="redis-example">
+  <h2>Using Redis Directly</h2>
+  <p>Value: <%= @redis_value %></p>
+  <p>This value will be cached for 1 hour using Redis directly</p>
+</div>
