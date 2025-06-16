@@ -16,3 +16,23 @@ $redis.get('cache:hoang123') # => "\x00\x11\x02;\xFE-\x97\xA7\x13\xDAA\xFF\xFF\x
 # 3. Clear cache:
 $redis.flushall # clear all keys in Redis (include key from Redis + Rails.cache)
 Rails.cache.clear # clear all keys from Rails.cache (prefix = cache:)
+
+# 4. Check key exist?
+Rails.cache.exist?('hoang') # --> return boolean
+
+# 5. Comamnd of Rails.cache and $redis
+Rails.cache.read(key)
+Rails.cache.fetch(key)
+Rails.cache.write('van1', 'trang1', expires_in: 20.seconds)
+Rails.cache.delete(key)
+
+$redis.get(key)
+$redis.set('cache:van3', 'trang3', ex: 2.minutes)
+$redis.del(key)
+
+# 6. Check TTL of key:
+# Rails.cache.ttl(key) --> NOT work
+$redis.ttl('cache:hoang') # ==> 3600 
+# > 0 --> seconds còn lại
+# - 1 --> key tồn tại những KO có TTL (sống mãi)
+# -2 --> key KO tồn tại
