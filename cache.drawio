@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.1.6">
   <diagram name="Page-1" id="XLBbjxTPXzx7NNE40CrK">
-    <mxGraphModel dx="1937" dy="511" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1901" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -63,7 +63,7 @@
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-22" value="include&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;gem&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-390" y="90" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="R0RBcUybxsGhWG_bY4Bf-23" value="&lt;b&gt;Questions:&lt;/b&gt;&lt;br&gt;&lt;div&gt;1. Why phải dùng Redis trước mà ko dùng Kafka luôn?&lt;/div&gt;&lt;div&gt;2. Why retry lại là 3 lần&lt;/div&gt;&lt;div&gt;3. Nếu cache data ở Redis success, after 1.day thì Client tiếp tục call thì system của mình sẽ handle như thế nào để continue return data?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. Em thấy system define 2 cái cache:&lt;/div&gt;&lt;div&gt;SakaniGlobalCache --&amp;gt; ít dùng&lt;/div&gt;&lt;div&gt;SknRedis::GlobalCache --&amp;gt; dùng nhiều&lt;/div&gt;&lt;div&gt;tất cả mọi thao tác get/set đều dùng&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;SknRedis::GlobalCache đúng ko?&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="R0RBcUybxsGhWG_bY4Bf-23" value="&lt;b&gt;Questions:&lt;/b&gt;&lt;br&gt;&lt;div&gt;1. Why phải dùng Redis trước mà ko dùng Kafka luôn?&lt;/div&gt;&lt;div&gt;2. Why retry lại là 3 lần&lt;/div&gt;&lt;div&gt;3. Nếu cache data ở Redis success, after 1.day nếu Client tiếp tục call thì system của mình sẽ handle như thế nào để continue return data?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. Em thấy system define 2 cái cache:&lt;/div&gt;&lt;div&gt;SakaniGlobalCache --&amp;gt; ít dùng&lt;/div&gt;&lt;div&gt;SknRedis::GlobalCache --&amp;gt; dùng nhiều&lt;/div&gt;&lt;div&gt;tất cả mọi thao tác get/set đều dùng&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;SknRedis::GlobalCache đúng ko?&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-250" y="250" width="410" height="170" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.008;entryY=0.542;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="R0RBcUybxsGhWG_bY4Bf-14" target="R0RBcUybxsGhWG_bY4Bf-15">
