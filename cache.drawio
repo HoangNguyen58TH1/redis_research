@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.1.6">
   <diagram name="Page-1" id="XLBbjxTPXzx7NNE40CrK">
-    <mxGraphModel dx="1901" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2160" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -46,25 +46,25 @@
           <mxGeometry x="-400" y="1042" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-14" value="&lt;b&gt;auction-service&lt;/b&gt;&lt;div&gt;send_response_to_client&lt;/div&gt;&lt;div&gt;::SakaniAsyncCommand::BaseCommand.response_to_client!(...expires_in: 1.day)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-790" y="77" width="380" height="92" as="geometry" />
+          <mxGeometry x="-670" y="77" width="350" height="92" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="R0RBcUybxsGhWG_bY4Bf-15" target="R0RBcUybxsGhWG_bY4Bf-16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-15" value="&lt;b&gt;async-command&lt;/b&gt;&lt;div&gt;::SakaniAsyncCommand::BaseCommand.response_to_client&lt;/div&gt;&lt;div&gt;SakaniAsyncCommand::Response.new(...).call&lt;/div&gt;&lt;div&gt;1.&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;send_response_to_redis + retry if any errors&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;cache_key = &quot;response_to_client/auction/2323&quot;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;2. if retry 3 times --&amp;gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;send_response_to_kafka&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;WaterDrop::SyncProducer.call(data, topic: &#39;sending_response_to_client&#39;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-270" y="30" width="410" height="170" as="geometry" />
+          <mxGeometry x="-240" y="30" width="410" height="170" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-16" value="&lt;b&gt;queries&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-service&lt;/span&gt;&lt;/b&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;consumeSendingResponseToClient(Topic: &quot;sending_response_to_client&quot;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;1. consumer polling with topic=&#39;auction&#39;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;globalCacheStore.WriteData(...)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;2. Client call polling&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;a. sakani-queries-service/cqrs-res?topic=auction&amp;amp;request_id=2351&lt;/span&gt;&lt;/div&gt;&lt;div&gt;b. get data cache from&amp;nbsp;globalCacheStore and response to Client&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="300" y="40" width="430" height="150" as="geometry" />
+          <mxGeometry x="220" y="40" width="430" height="150" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-21" value="kafka" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="190" y="90" width="50" height="30" as="geometry" />
+          <mxGeometry x="170" y="90" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-22" value="include&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;gem&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-390" y="90" width="90" height="30" as="geometry" />
+          <mxGeometry x="-330" y="100" width="90" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="R0RBcUybxsGhWG_bY4Bf-23" value="&lt;b&gt;Questions:&lt;/b&gt;&lt;br&gt;&lt;div&gt;1. Why phải dùng Redis trước mà ko dùng Kafka luôn?&lt;/div&gt;&lt;div&gt;2. Why retry lại là 3 lần&lt;/div&gt;&lt;div&gt;3. Nếu cache data ở Redis success, after 1.day nếu Client tiếp tục call thì system của mình sẽ handle như thế nào để continue return data?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. Em thấy system define 2 cái cache:&lt;/div&gt;&lt;div&gt;SakaniGlobalCache --&amp;gt; ít dùng&lt;/div&gt;&lt;div&gt;SknRedis::GlobalCache --&amp;gt; dùng nhiều&lt;/div&gt;&lt;div&gt;tất cả mọi thao tác get/set đều dùng&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;SknRedis::GlobalCache đúng ko?&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-250" y="250" width="410" height="170" as="geometry" />
+        <mxCell id="R0RBcUybxsGhWG_bY4Bf-23" value="&lt;b&gt;Questions:&lt;/b&gt;&lt;br&gt;&lt;div&gt;1. VD ở queries-service vẫn ghi cache bị lỗi --&amp;gt; thì sẽ KO có data polling hử anh?&lt;/div&gt;&lt;div&gt;Cái polling bị phụ thuộc hoàn toàn vào Redis của system sao?&lt;/div&gt;&lt;div&gt;2. Why retry lại là 3 lần&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;3. Nếu cache data ở Redis success, after 1.day nếu Client tiếp tục call thì system của mình sẽ handle như thế nào để continue return data?&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;a. nếu miss cache thì return empty data à?&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;b. Nếu trong 1.day đó có 1 trigger polling mới --&amp;gt; thì nó override lại cache hay sao?&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. Em thấy system define 2 cái cache:&lt;/div&gt;&lt;div&gt;SakaniGlobalCache --&amp;gt; ít dùng&lt;/div&gt;&lt;div&gt;SknRedis::GlobalCache --&amp;gt; dùng nhiều&lt;/div&gt;&lt;div&gt;tất cả mọi thao tác get/set đều dùng&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;SknRedis::GlobalCache đúng ko?&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;5. STG/PROD mỗi service có 1 Redis riêng&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;TEST env thì các services dùng chung 1 Redis (khác port để phân biệt) đúng ko?&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;6. Trong sakani system thì:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- use Redis làm DB cache&lt;/div&gt;&lt;div&gt;- use Redis pub/sub&lt;/div&gt;&lt;div&gt;-&amp;nbsp; còn sử dụng Redis làm gì nữa ko?&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-260" y="224.5" width="530" height="355.5" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.008;entryY=0.542;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="R0RBcUybxsGhWG_bY4Bf-14" target="R0RBcUybxsGhWG_bY4Bf-15">
           <mxGeometry relative="1" as="geometry" />
@@ -73,10 +73,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-25" value="&lt;b&gt;Client call polling:&lt;/b&gt;&lt;div&gt;https://test-sakani.housingapps.sa/sakani-queries-service/cqrs-res?topic=auction&amp;amp;request_id=2351&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="375" y="290" width="280" height="141" as="geometry" />
+          <mxGeometry x="295" y="279" width="280" height="141" as="geometry" />
         </mxCell>
         <mxCell id="R0RBcUybxsGhWG_bY4Bf-27" value="call polling" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="510" y="220" width="80" height="30" as="geometry" />
+          <mxGeometry x="450" y="220" width="80" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
